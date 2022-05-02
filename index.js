@@ -24,23 +24,28 @@ app.set('views', './templates');
 
 app.get('/', (req, res) => {
   let name = randomName
+  let car = randomCar
+  let number = randomPhoneNumber
+  let photo = randomAvatar
+  let email = randomEmail
+  let company = randomCompany
    // res.sendFile(__dirname + '/templates/forma.html')
-   res.render('loop', {name, indeksas: 12})
+   res.render('loop', {name, car, number, photo, email, company})
 })
-app.get('/loop', (req, res) => {
-  let variables = {
-    name: randomName,
-    car: randomCar,
-    number: randomPhoneNumber,
-    photo: randomAvatar,
-    email : randomEmail,
-    company : randomCompany
+// app.get('/loop', (req, res) => {
+//   let variables = {
+//     name: randomName,
+//     car: randomCar,
+//     number: randomPhoneNumber,
+//     photo: randomAvatar,
+//     email : randomEmail,
+//     company : randomCompany
     
     
-  }
+//   }
    
-   res.render('loop', variables)
-})
+//    res.render('loop', variables)
+// })
 
 app.get('/client-submit', async (req, res) => {
     if(parseInt( Object.keys(req.query).length ) > 0) {
