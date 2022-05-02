@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars');
 app.set('views', './templates');
 
 app.get('/', (req, res) => {
-  let name = { randomName}
+  let name = randomName
    // res.sendFile(__dirname + '/templates/forma.html')
    res.render('loop', {name, indeksas: 12})
 })
@@ -39,7 +39,7 @@ app.get('/loop', (req, res) => {
     
   }
    
-   res.render('loop', {variables})
+   res.render('loop', variables)
 })
 
 app.get('/client-submit', async (req, res) => {
